@@ -114,6 +114,7 @@ cd github
 
 ```bash
 python -m personnel_scrubber.cli --db scrubber.db init-db
+# or: python personnel_scrubber/cli.py --db scrubber.db init-db
 ```
 
 ### 3) Add a removal row
@@ -126,6 +127,7 @@ python -m personnel_scrubber.cli --db scrubber.db add   --domain examplebroker.c
 
 ```bash
 python -m personnel_scrubber.cli --db scrubber.db list
+# or: python personnel_scrubber/cli.py --db scrubber.db list
 ```
 
 ## What this gives you today

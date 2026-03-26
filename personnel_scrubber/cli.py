@@ -3,10 +3,15 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from datetime import date
 from pathlib import Path
 
-from personnel_scrubber.tracker import RemovalRecord, connect, init_db, insert_removal, list_removals
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from personnel_scrubber.tracker import RemovalRecord, connect, init_db, insert_removal, list_removals
+else:
+    from .tracker import RemovalRecord, connect, init_db, insert_removal, list_removals
 
 
 def build_parser() -> argparse.ArgumentParser:
