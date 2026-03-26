@@ -1,0 +1,32 @@
+domain: "examplebroker.com"
+search_url_pattern: "https://www.examplebroker.com/search?name={name}&city={city}&state={state}"
+opt_out_url: "https://www.examplebroker.com/opt-out"
+needs_email_confirmation: true
+has_captcha: true
+needs_exact_listing_url: true
+
+selectors:
+  search_result_links: "a.result-link"
+  listing_name: "h1.profile-name"
+  opt_out_form: "form#optout"
+  submit_button: "button[type='submit']"
+
+form_fields:
+  first_name:
+    selector: "input[name='firstName']"
+    source: "first_name"
+  last_name:
+    selector: "input[name='lastName']"
+    source: "last_name"
+  email:
+    selector: "input[name='email']"
+    source: "notification_email"
+  listing_url:
+    selector: "input[name='listingUrl']"
+    source: "listing_url"
+
+email_confirmation:
+  allowed_sender_domains:
+    - "examplebroker.com"
+  confirmation_link_patterns:
+    - "https://www.examplebroker.com/confirm"
